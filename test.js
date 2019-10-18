@@ -13,3 +13,7 @@ test('base', t => {
     t.is(blurl('http://user@www.site.ru'), 'http://user@www.site.ru');
     t.is(blurl('http://www.site.ru/path/to/dir?a=1&b=2#link'), 'http://www.site.ru/path/to/dir?a=1&b=2#link');
 });
+
+test('blur password', t => {
+    t.is(blurl('http://user:password@www.site.ru'), 'http://user:********@www.site.ru');
+});
