@@ -2,6 +2,7 @@ const test = require('ava');
 const blurl = require('.');
 
 test('base', t => {
+    t.is(blurl(''), '');
     t.is(blurl('not-site'), 'not-site');
     t.is(blurl('not-http://www.site.ru'), 'not-http://www.site.ru');
     t.is(blurl('http://www.site.ru'), 'http://www.site.ru');
