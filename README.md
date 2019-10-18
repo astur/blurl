@@ -1,6 +1,6 @@
 # blurl
 
-blurl description here
+blurring password in url
 
 [![Build Status][travis-image]][travis-url]
 [![NPM version][npm-image]][npm-url]
@@ -15,6 +15,8 @@ npm i blurl
 
 ```js
 const blurl = require('blurl');
+
+blurl('http://user:password@www.site.ru') // returns 'http://user:********@www.site.ru'
 ```
 
 ## License
