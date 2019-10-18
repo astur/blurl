@@ -1,6 +1,5 @@
-const {parse, format} = require('url');
-
-module.exports = url => {
-    const obj = parse(url);
-    return format(obj);
-};
+module.exports = url => url
+    .replace(
+        /http(s?):\/\/([^:.@/]+):([^:.@/]+)@/,
+        (match, p1, p2, p3) => `http${p1}://${p2}:${p3.split('').map(v => '*').join('')}@`
+    );
