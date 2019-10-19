@@ -16,5 +16,8 @@ test('base', t => {
 });
 
 test('blur password', t => {
-    t.is(blurl('http://user:password@www.site.ru'), 'http://user:********@www.site.ru');
+    t.is(
+        blurl('http://user:password@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link'),
+        'http://user:********@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link'
+    );
 });
