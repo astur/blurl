@@ -12,6 +12,7 @@ test('base', t => {
     t.is(blurl('http://www.site.ru/?a=1'), 'http://www.site.ru/?a=1');
     t.is(blurl('http://user@www.site.ru'), 'http://user@www.site.ru');
     t.is(blurl('http://www.site.ru/path/to/dir?a=1&b=2#link'), 'http://www.site.ru/path/to/dir?a=1&b=2#link');
+    t.is(blurl('http://www.site.ru?q=%D1%82%D0%B5%D1%81%D1%82'), 'http://www.site.ru?q=%D1%82%D0%B5%D1%81%D1%82');
 });
 
 test('blur password', t => {
