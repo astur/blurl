@@ -20,4 +20,18 @@ test('blur password', t => {
         blurl('http://user:password@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link'),
         'http://user:********@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link'
     );
+    t.is(
+        blurl(
+            'http://user:password@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link',
+            {blurPassword: true}
+        ),
+        'http://user:********@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link'
+    );
+    t.is(
+        blurl(
+            'http://user:password@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link',
+            {blurPassword: false}
+        ),
+        'http://user:password@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link'
+    );
 });
