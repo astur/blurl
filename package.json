@@ -1,6 +1,6 @@
 {
   "name": "blurl",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "blurring password in url",
   "main": "index.js",
   "author": "astur <astur@yandex.ru> (http://kozlov.am/)",
