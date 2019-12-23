@@ -16,7 +16,14 @@ npm i blurl
 ```js
 const blurl = require('blurl');
 
-blurl('http://user:password@www.site.ru') // returns 'http://user:********@www.site.ru'
+blurl('http://user:password@www.site.ru')
+// returns 'http://user:********@www.site.ru'
+
+blurl('http://user:password@www.site.ru', {blurPassword: false})
+// returns 'http://user:password@www.site.ru'
+
+blurl('http://user:password@www.site.ru', {blurPassword: [1, 2]})
+// returns 'http://user:p*****rd@www.site.ru'
 ```
 
 ## License
