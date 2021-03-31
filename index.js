@@ -11,5 +11,5 @@ module.exports = (url, {blurPassword = true} = {}) => url
                 return `http${p1}://${p2}:${pArr.join('')}@`;
             }
             return blurPassword ? `http${p1}://${p2}:${p3.split('').map(v => '*').join('')}@` : match;
-        }
+        },
     );

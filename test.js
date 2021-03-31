@@ -18,34 +18,34 @@ test('base', t => {
 test('blur password', t => {
     t.is(
         blurl('http://user:password@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link'),
-        'http://user:********@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link'
+        'http://user:********@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link',
     );
     t.is(
         blurl(
             'http://user:password@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link',
-            {blurPassword: true}
+            {blurPassword: true},
         ),
-        'http://user:********@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link'
+        'http://user:********@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link',
     );
     t.is(
         blurl(
             'http://user:password@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link',
-            {blurPassword: false}
+            {blurPassword: false},
         ),
-        'http://user:password@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link'
+        'http://user:password@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link',
     );
     t.is(
         blurl(
             'http://user:password@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link',
-            {blurPassword: [1, 1]}
+            {blurPassword: [1, 1]},
         ),
-        'http://user:p******d@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link'
+        'http://user:p******d@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link',
     );
     t.is(
         blurl(
             'http://user:password@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link',
-            {blurPassword: [4, 5]}
+            {blurPassword: [4, 5]},
         ),
-        'http://user:password@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link'
+        'http://user:password@www.site.ru:1703/path/to/file.html?a=123&q=%D1%82%D0%B5%D1%81%D1%82#link',
     );
 });
